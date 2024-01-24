@@ -5,14 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="stylesheet" href="./public/css/app.css">
-                    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">                  
     <title>MEMORY</title>
 </head>
 
 <body>
     <main>
+            <div class="my-starter-page-container" id="start-one">
 
-            <div class="my-container">
+                <h1 id="start-question">WANNA PLAY MEMORY?</h1>
+                <div class="my-btns">
+                    <button class="my-btn" id="yes">Yes</button>
+                    <button class="my-btn" id="no">No</button>
+                </div>
+            </div>
+
+            <div class="my-starter-page-container hide" id="start-two">
+
+                <h1>CHOOSE AN EMOJI</h1>
+                <div class="my-btns">
+                    <button class="my-btn emoji"><img src="./public/assets/img/icons8-balloon-48.png" alt="balloon-emoji" style="height: 30px;width: 30px;"></button>
+                    <button class="my-btn emoji"><img src="./public/assets/img/icons8-bullseye-48.png" alt="bullseye-emoji" style="height: 30px;width: 30px;"></button>
+                    <button class="my-btn emoji"><img src="./public/assets/img/icons8-pinata-48.png" alt="pinata-emoji" style="height: 30px;width: 30px;"></button>
+                    <button class="my-btn emoji"><img src="./public/assets/img/icons8-teddy-bear-48.png" alt="bear-emoji" style="height: 30px;width: 30px;"></button>
+                </div>
+            </div>
+
+            <div class="my-starter-page-container hide" id="start-three">
+
+                <img src="" alt="chosen emoji" class="chosen-emoji" style="height:48px; width:48px">
+                <div class="my-btns">
+                    <button class="my-btn play">LET'S PLAY!</button>
+                </div>
+
+            </div>
+
+            <div class="my-container hide">
 
                 <div class="my-flip-card" number="1">
                     <div class="my-flip-card-container">

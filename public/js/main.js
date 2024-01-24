@@ -1,8 +1,64 @@
+//STARTING DISPLAY ONE & SWICTH TO SECOND DISPLAY
+
+let firstStartingSection = document.querySelector("#start-one")
+
+let secondStartingSection = document.querySelector("#start-two")
+
+let btnYes = document.querySelector("#yes")
+
+let btnNo = document.querySelector("#no")
+
+let bothBtns = document.querySelector(".my-btns")
+
+let myH1 = document.querySelector("#start-question")
+
+bothBtns.addEventListener("click",(e)=>{
+  if(e.target.id == "yes"){
+    firstStartingSection.classList.add("hide")
+    secondStartingSection.classList.remove("hide")
+
+  } else if(e.target.id == "no") {
+    myH1.innerText = "SEE YOU NEXT TIME!"
+    bothBtns.classList.add("hide")
+  }
+})
+
+//STARTING SREEN SECOND & SWITCH TO THIRD
+
+let emojiBtns = document.querySelectorAll(".emoji")
+
+let thirdStartingSection = document.querySelector("#start-three")
+
+let chosenEmoji
+
+emojiBtns.forEach(element => {
+  element.addEventListener("click",()=>{
+    chosenEmoji = element.querySelector("img").src
+    secondStartingSection.classList.add("hide")
+    thirdStartingSection.children[0].src = chosenEmoji
+    thirdStartingSection.classList.remove("hide")
+  })
+});
+
+//CAME DISPLAY
+
+let letsPlayBtn = document.querySelector(".play")
+
+let gameDisplay = document.querySelector(".my-container")
+
+console.log(gameDisplay)
+
+letsPlayBtn.addEventListener("click",()=>{
+  thirdStartingSection.classList.add("hide")
+  gameDisplay.classList.remove("hide")
+})
+
+
 //declaration of variables
 
 let allCardsDown = document.querySelectorAll(".img-down")
 
-let allImagesLink = ["./public/assets/img/king.png","./public/assets/img/the-eight.png","./public/assets/img/the-four.png","./public/assets/img/woman.png","./public/assets/img/king.png","./public/assets/img/the-eight.png","./public/assets/img/the-four.png","./public/assets/img/woman.png"]
+let allImagesLink = ["./public/assets/img/my-lemon.png","./public/assets/img/my-rainbow.png","./public/assets/img/my-boat.png","./public/assets/img/my-rollerblades.png","./public/assets/img/my-lemon.png","./public/assets/img/my-rainbow.png","./public/assets/img/my-boat.png","./public/assets/img/my-rollerblades.png"]
 
 //stock all the images randomly in my available divs
 
@@ -92,9 +148,7 @@ myFlipCards.forEach(element => {
     element.addEventListener("click",(x)=>{
       if(element.querySelector(".my-flip-card-container").getAttribute("status") != "done"){
       turnCard(x)
-      } else {
-        alert("you already played this card")
-      }
+      } 
   }) 
 });
 
