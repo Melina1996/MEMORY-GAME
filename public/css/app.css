@@ -11944,5 +11944,8 @@ main .my-container .my-flip-card .my-flip-card-container .my-flip-card-down .img
 main .my-container .my-flip-card .rotate {
   transform: rotateY(180deg);
 }
+main .my-container .my-flip-card .shining {
+  box-shadow: 0px 0px 5px 10px green;
+}
 
 /*# sourceMappingURL=app.css.map */

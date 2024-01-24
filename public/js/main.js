@@ -21,6 +21,14 @@ for (let i = 0; i < allCardsDown.length; i++) {
   allImagesLink.splice(indexImg,1)
 }
 
+//all my image-containers
+
+let allContainers = document.querySelectorAll(".my-flip-card-container")
+
+allContainers.forEach(element => {
+  element.setAttribute("status","playing")
+});
+
 //click on card and turn it
 
 let turnedCards = []
@@ -40,10 +48,8 @@ function turnCard(e){
     cardContainer = e.target.parentElement.parentElement
     cardContainer.classList.add("rotate")
     turnedCards.push(e.target)
-    console.log(turnedCards)
       if(turnedCards.length == 2){
-        console.log("hello")
-        console.log(turnedCards.length)
+
         imgSrcOne = turnedCards[0].parentElement.parentElement.querySelector(".img-down").src
         imgSrcTwo = turnedCards[1].parentElement.parentElement.querySelector(".img-down").src
 
@@ -61,29 +67,21 @@ function turnCard(e){
           }, 2000)
           
           turnedCards = []
-          console.log(turnedCards)
 
         } else{
-          console.log("good job")
+
+          imgContainerOne.setAttribute("status","done")
+          imgContainerTwo.setAttribute("status","done")
+
+          // imgContainerOne.classList.add("shining")
+          // setTimeout(function(){
+          //   imgContainerOne.classList.remove("shining");
+          // }, 1000)
           turnedCards = []
-          console.log(turnedCards)
+
         }
       }
     }
-  //   } else {
-  //     imgSrcOne = turnedCards[0].parentElement.parentElement.querySelector(".img-down").src
-  //     imgSrcTwo = turnedCards[1].parentElement.parentElement.querySelector(".img-down").src
-     
-  //     if(imgSrcOne != imgSrcTwo){
-  //       console.log("not the same")
-  //       turnedCards[0].parentElement.parentElement.classList.remove("rotate")
-  //       turnedCards[1].parentElement.parentElement.classList.remove("rotate")
-
-  //       turnedCards = []
-  //     } else{
-  //       turnedCards = []
-  //     }
-  // }
 }
 
 let myFlipCards = document.querySelectorAll(".my-flip-card")
@@ -91,13 +89,12 @@ let myFlipCards = document.querySelectorAll(".my-flip-card")
 let myCardContainers = document.querySelectorAll(".my-flip-card-container")
 
 myFlipCards.forEach(element => {
-  element.addEventListener("click",(element)=>{
-    // console.log(turnedCards)
-    // if(turnedCards.length<=1){
-      turnCard(element)
-    // } else{
-      
-    // }
+    element.addEventListener("click",(x)=>{
+      if(element.querySelector(".my-flip-card-container").getAttribute("status") != "done"){
+      turnCard(x)
+      } else {
+        alert("you already played this card")
+      }
   }) 
 });
 
