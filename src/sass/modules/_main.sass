@@ -30,8 +30,7 @@ main
                 font-family: Inter
                 font-size: 16px
                 letter-spacing: 1px
-                color: #000
-                border: 3px solid
+                border: 3px solid black
                 box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 2px 2px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px
             .play 
                 width: 150px
@@ -81,8 +80,40 @@ main
                             height: 300px
             .rotate
                 transform: rotateY(180deg)
-            .shining
-                box-shadow: 0px 0px 5px 10px green
+    .score
+        position: absolute
+        right: 100px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 20px
+        .score-emoji
+            width: 48px
+            height: 48px
+        .score-text
+            height: 48px
+            width: 100px
+            letter-spacing: 1px
+            border: 3px solid black
+            box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 2px 2px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px
+            display: flex
+            justify-content: center
+            align-items: center
+            .score-header
+                padding: 0
+                margin: 0
+                font-family: Inter
+                font-size: 16px
+            .message
+                font-size: 10px
+                margin: 0
+                padding: 0
+                font-family: Inter
+                font-size: 16px
+                text-align: center  
+        .my-counter
+            margin: 0   
     .hide
         display: none
 

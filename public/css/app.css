@@ -11888,7 +11888,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100vh;
-  font-family: sans-serif;
+  font-family: Inter;
   background-color: white;
 }
 
@@ -11927,8 +11927,7 @@ main .my-starter-page-container .my-btns .my-btn {
   font-family: Inter;
   font-size: 16px;
   letter-spacing: 1px;
-  color: #000;
-  border: 3px solid;
+  border: 3px solid black;
   box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 2px 2px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px;
 }
 main .my-starter-page-container .my-btns .play {
@@ -11990,8 +11989,45 @@ main .my-container .my-flip-card .my-flip-card-container .my-flip-card-down .img
 main .my-container .my-flip-card .rotate {
   transform: rotateY(180deg);
 }
-main .my-container .my-flip-card .shining {
-  box-shadow: 0px 0px 5px 10px green;
+main .score {
+  position: absolute;
+  right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+main .score .score-emoji {
+  width: 48px;
+  height: 48px;
+}
+main .score .score-text {
+  height: 48px;
+  width: 100px;
+  letter-spacing: 1px;
+  border: 3px solid black;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 2px 2px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .score .score-text .score-header {
+  padding: 0;
+  margin: 0;
+  font-family: Inter;
+  font-size: 16px;
+}
+main .score .score-text .message {
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  font-size: 16px;
+  text-align: center;
+}
+main .score .my-counter {
+  margin: 0;
 }
 main .hide {
   display: none;

@@ -40,17 +40,20 @@ emojiBtns.forEach(element => {
   })
 });
 
-//CAME DISPLAY
+//GAME DISPLAY
 
 let letsPlayBtn = document.querySelector(".play")
 
 let gameDisplay = document.querySelector(".my-container")
 
-console.log(gameDisplay)
+let score = document.querySelector(".score")
+
 
 letsPlayBtn.addEventListener("click",()=>{
   thirdStartingSection.classList.add("hide")
   gameDisplay.classList.remove("hide")
+  score.classList.remove("hide")
+  score.querySelector("img").src = chosenEmoji
 })
 
 
@@ -99,6 +102,18 @@ let imgContainerOne
 
 let imgContainerTwo
 
+let myCounter = document.querySelector(".my-counter")
+
+let count = 0
+
+let imgOne
+
+let imgTwo
+
+let message = document.querySelector(".message")
+
+let divMessage = document.querySelector(".message-background")
+
 function turnCard(e){
     if(turnedCards.length <= 1){
     cardContainer = e.target.parentElement.parentElement
@@ -106,21 +121,33 @@ function turnCard(e){
     turnedCards.push(e.target)
       if(turnedCards.length == 2){
 
-        imgSrcOne = turnedCards[0].parentElement.parentElement.querySelector(".img-down").src
-        imgSrcTwo = turnedCards[1].parentElement.parentElement.querySelector(".img-down").src
+        imgOne = turnedCards[0].parentElement.parentElement.querySelector(".img-down")
+        imgTwo = turnedCards[1].parentElement.parentElement.querySelector(".img-down")
+
+        imgSrcOne = imgOne.src
+        imgSrcTwo = imgTwo.src
 
         imgContainerOne = turnedCards[0].parentElement.parentElement
      
         imgContainerTwo = turnedCards[1].parentElement.parentElement
 
         if(imgSrcOne != imgSrcTwo){
-          console.log("not the same")
           setTimeout(function(){
             imgContainerOne.classList.remove("rotate");
-          }, 2000)
+          }, 1500)
           setTimeout(function(){
             imgContainerTwo.classList.remove("rotate");
-          }, 2000)
+          }, 1500)
+
+          message.innerText = "KEEP LOOKING"
+          divMessage.style.background = "yellow"
+          setTimeout(function(){
+            message.innerText = "";
+          }, 1500)
+          setTimeout(function(){
+            divMessage.style.background = "white";
+          }, 1500)
+          
           
           turnedCards = []
 
@@ -129,10 +156,20 @@ function turnCard(e){
           imgContainerOne.setAttribute("status","done")
           imgContainerTwo.setAttribute("status","done")
 
-          // imgContainerOne.classList.add("shining")
-          // setTimeout(function(){
-          //   imgContainerOne.classList.remove("shining");
-          // }, 1000)
+          console.log(imgOne)
+          count++
+          myCounter.innerText = count
+
+          message.innerText = "BRAVO"
+          divMessage.style.background = "yellow"
+
+          setTimeout(function(){
+            message.innerText = "";
+          }, 1500)
+          setTimeout(function(){
+            divMessage.style.background = "white";
+          }, 1500)
+          
           turnedCards = []
 
         }
