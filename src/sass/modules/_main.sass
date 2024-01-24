@@ -15,12 +15,32 @@ main
         align-items: center
         gap: 10px
         .my-flip-card
+            width: 200px
+            height: 300px
+            // perspective: 1000px
             .my-flip-card-container
-                .my-flip-card-front
-                .my-flip-card-back
+                    position: relative
                     width: 200px
                     height: 300px
-                    .img-back
-                        width: 100%
-                        height: 100%
-
+                    transition: transform 0.8s
+                    transform-style: preserve-3d
+                    .my-flip-card-up
+                        position: absolute
+                        width: 200px
+                        height: 300px
+                        backface-visibility: hidden
+                        .img-up
+                            width: 200px
+                            height: 300px
+                    .my-flip-card-down
+                        position: absolute
+                        width: 200px
+                        height: 300px
+                        transform: rotateY(180deg)
+                        backface-visibility: hidden
+                        .img-down
+                            width: 200px
+                            height: 300px
+        .my-flip-card:hover .my-flip-card-container
+            transform: rotateY(180deg)
+            
