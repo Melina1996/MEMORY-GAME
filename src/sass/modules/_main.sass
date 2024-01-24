@@ -34,6 +34,9 @@ main
                 box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 2px 2px 0px 0px, 4px 4px 0px 0px, 3px 3px 0px 0px
             .play 
                 width: 150px
+            .play:hover
+                color: white
+                background-color: black
             #yes.my-btn:hover
                 color: white
                 background-color: black
@@ -121,8 +124,18 @@ main
         display: none
     #end
         .end-display
+            animation: bounce 2s ease
+            animation-iteration-count: infinite
             .well-done
                 font-size: 20px
                 color: black
+        @keyframes bounce
+            0%   
+                transform: translateY(0)
+            50%  
+                transform: translateY(-100px)
+            100% 
+                transform: translateY(0)
+            
 
             

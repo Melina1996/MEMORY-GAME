@@ -11933,6 +11933,10 @@ main .my-starter-page-container .my-btns .my-btn {
 main .my-starter-page-container .my-btns .play {
   width: 150px;
 }
+main .my-starter-page-container .my-btns .play:hover {
+  color: white;
+  background-color: black;
+}
 main .my-starter-page-container .my-btns #yes.my-btn:hover {
   color: white;
   background-color: black;
@@ -12032,9 +12036,24 @@ main .score .my-counter {
 main .hide {
   display: none;
 }
+main #end .end-display {
+  animation: bounce 2s ease;
+  animation-iteration-count: infinite;
+}
 main #end .end-display .well-done {
   font-size: 20px;
   color: black;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -188,7 +188,7 @@ function turnCard(e){
           //message and stye
           message.innerText = "BRAVO"
           divMessage.style.background = "green"
-          divMessage.style.color = "white"
+          message.style.color = "white"
 
           //remove all the message-styles with a delay 
           setTimeout(function(){
