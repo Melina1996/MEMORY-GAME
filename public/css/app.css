@@ -11899,5 +11899,22 @@ main {
   align-items: center;
   justify-content: center;
 }
+main .my-container {
+  width: 60%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+main .my-container .my-flip-card .my-flip-card-container .my-flip-card-back {
+  width: 200px;
+  height: 300px;
+}
+main .my-container .my-flip-card .my-flip-card-container .my-flip-card-back .img-back {
+  width: 100%;
+  height: 100%;
+}
 
 /*# sourceMappingURL=app.css.map */
