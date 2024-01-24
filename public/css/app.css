@@ -12032,5 +12032,9 @@ main .score .my-counter {
 main .hide {
   display: none;
 }
+main #end .end-display .well-done {
+  font-size: 20px;
+  color: black;
+}
 
 /*# sourceMappingURL=app.css.map */

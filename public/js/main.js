@@ -114,6 +114,8 @@ let message = document.querySelector(".message")
 
 let divMessage = document.querySelector(".message-background")
 
+let lastDisplay = document.querySelector("#end")
+
 function turnCard(e){
     if(turnedCards.length <= 1){
     cardContainer = e.target.parentElement.parentElement
@@ -172,6 +174,13 @@ function turnCard(e){
           
           turnedCards = []
 
+          if(count == 4){
+            score.classList.add("hide")
+            gameDisplay.classList.add("hide")
+            lastDisplay.classList.remove("hide")
+            lastDisplay.querySelector("img").src = chosenEmoji
+          }
+
         }
       }
     }
@@ -186,6 +195,9 @@ myFlipCards.forEach(element => {
       if(element.querySelector(".my-flip-card-container").getAttribute("status") != "done"){
       turnCard(x)
       } 
-  }) 
+    }) 
 });
+
+
+
 
