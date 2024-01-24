@@ -55,6 +55,7 @@ main
             width: 200px
             height: 300px
             perspective: 1000px
+            //i have one container that contains as absolute elements my two images. Both images have the property "backface-visibility: hidden", so that when rotating, the back-side image is not shown
             .my-flip-card-container
                     position: relative
                     width: 200px
@@ -70,6 +71,7 @@ main
                             width: 200px
                             height: 300px
                     .my-flip-card-down
+                        //rotates, so that the other image is shown again
                         position: absolute
                         width: 200px
                         height: 300px
@@ -78,6 +80,7 @@ main
                         .img-down
                             width: 200px
                             height: 300px
+            //class "rotate" that is added to my card-container
             .rotate
                 transform: rotateY(180deg)
     .score
