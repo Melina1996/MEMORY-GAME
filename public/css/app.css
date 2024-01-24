@@ -11940,7 +11940,7 @@ main .my-container .my-flip-card .my-flip-card-container .my-flip-card-down .img
   width: 200px;
   height: 300px;
 }
-main .my-container .my-flip-card:hover .my-flip-card-container {
+main .my-container .my-flip-card .rotate {
   transform: rotateY(180deg);
 }
 
