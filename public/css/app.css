@@ -11911,6 +11911,7 @@ main .my-container {
 main .my-container .my-flip-card {
   width: 200px;
   height: 300px;
+  perspective: 1000px;
 }
 main .my-container .my-flip-card .my-flip-card-container {
   position: relative;

@@ -31,26 +31,59 @@ let imgSrcOne
 
 let imgSrcTwo
 
+let imgContainerOne
+
+let imgContainerTwo
+
 function turnCard(e){
     if(turnedCards.length <= 1){
     cardContainer = e.target.parentElement.parentElement
     cardContainer.classList.add("rotate")
     turnedCards.push(e.target)
     console.log(turnedCards)
-    } else {
-      imgSrcOne = turnedCards[0].parentElement.parentElement.querySelector(".img-down").src
-      imgSrcTwo = turnedCards[1].parentElement.parentElement.querySelector(".img-down").src
-     
-      if(imgSrcOne != imgSrcTwo){
-        console.log("not the same")
-        turnedCards[0].parentElement.parentElement.classList.remove("rotate")
-        turnedCards[1].parentElement.parentElement.classList.remove("rotate")
+      if(turnedCards.length == 2){
+        console.log("hello")
+        console.log(turnedCards.length)
+        imgSrcOne = turnedCards[0].parentElement.parentElement.querySelector(".img-down").src
+        imgSrcTwo = turnedCards[1].parentElement.parentElement.querySelector(".img-down").src
 
-        turnedCards = []
-      } else{
-        turnedCards = []
+        imgContainerOne = turnedCards[0].parentElement.parentElement
+     
+        imgContainerTwo = turnedCards[1].parentElement.parentElement
+
+        if(imgSrcOne != imgSrcTwo){
+          console.log("not the same")
+          setTimeout(function(){
+            imgContainerOne.classList.remove("rotate");
+          }, 2000)
+          setTimeout(function(){
+            imgContainerTwo.classList.remove("rotate");
+          }, 2000)
+          
+          turnedCards = []
+          console.log(turnedCards)
+
+        } else{
+          console.log("good job")
+          turnedCards = []
+          console.log(turnedCards)
+        }
       }
-  }
+    }
+  //   } else {
+  //     imgSrcOne = turnedCards[0].parentElement.parentElement.querySelector(".img-down").src
+  //     imgSrcTwo = turnedCards[1].parentElement.parentElement.querySelector(".img-down").src
+     
+  //     if(imgSrcOne != imgSrcTwo){
+  //       console.log("not the same")
+  //       turnedCards[0].parentElement.parentElement.classList.remove("rotate")
+  //       turnedCards[1].parentElement.parentElement.classList.remove("rotate")
+
+  //       turnedCards = []
+  //     } else{
+  //       turnedCards = []
+  //     }
+  // }
 }
 
 let myFlipCards = document.querySelectorAll(".my-flip-card")
@@ -59,7 +92,12 @@ let myCardContainers = document.querySelectorAll(".my-flip-card-container")
 
 myFlipCards.forEach(element => {
   element.addEventListener("click",(element)=>{
+    // console.log(turnedCards)
+    // if(turnedCards.length<=1){
       turnCard(element)
+    // } else{
+      
+    // }
   }) 
 });
 
